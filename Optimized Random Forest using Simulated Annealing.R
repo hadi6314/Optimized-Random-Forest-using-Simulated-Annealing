@@ -1,8 +1,3 @@
-#install.packages("rpart")
-#install.packages("caret")
-#install.packages("randomForest")
-#install.packages("e1071")
-#install.packages("rlang")
 library("e1071")
 library("randomForest")
 library(ISLR)
@@ -12,7 +7,6 @@ library("rlang")
 library(dplyr)
 library(drat)
 library(xgboost)
-
 
 inTraining =  createDataPartition(Default$default, p = 0.8, list = FALSE)
 training = Default[inTraining,]
@@ -92,7 +86,6 @@ transition = function(c.solution, n.solution, c.temp)
   return(transit)
 }
 
-
 c.solution = initial.solution.generator()
 #c.fitness = fitness(c.solution)
 c.temp = initial.tempreture
@@ -136,39 +129,3 @@ while (c.temp > final.tempreture)
   }
   c.temp = tempreture.updater(c.temp)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
